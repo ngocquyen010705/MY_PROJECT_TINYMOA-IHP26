@@ -1,0 +1,16 @@
+{
+  "DESIGN_NAME": "tt_um_tinymoa_ihp26a",
+  "VERILOG_FILES": [
+    "dir::project.v",
+    "dir::TinyMOA/src/tinymoa.v",
+    "dir::TinyMOA/src/cpu.v",
+    "dir::TinyMOA/src/dcim/dcim.v",
+    "dir::TinyMOA/src/dcim/compressor.v",
+    "dir::TinyMOA/src/tcm.v"
+  ],
+  "DIE_AREA": "0 0 1724.16 313.74",
+  "FP_DEF_TEMPLATE": "dir::../tt/tech/ihp-sg13g2/def/tt_block_8x2_pgvdd.def",
+  "VDD_PIN": "VPWR",
+  "GND_PIN": "VGND",
+  "RT_MAX_LAYER": "TopMetal1"
+}

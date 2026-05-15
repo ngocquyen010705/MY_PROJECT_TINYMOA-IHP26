@@ -1,0 +1,23 @@
+.DS_Store
+.idea
+*.vcd
+*.fst
+*.fst.hier
+runs
+tt_submission
+src/user_config.json
+src/config_merged.json
+test/sim_build
+test/__pycache__/
+test/results.xml
+test/gate_level_netlist.v
+
+# Ignore submodule's Python config to use main repo's UV setup
+src/TinyMOA/pyproject.toml
+src/TinyMOA/uv.lock
+src/TinyMOA/.python-version
+src/TinyMOA/.venv/
+src/TinyMOA/docs/
+
+# Ignore TinyTapeout support tools
+/tt/

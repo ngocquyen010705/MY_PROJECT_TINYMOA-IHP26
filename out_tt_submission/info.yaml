@@ -1,0 +1,64 @@
+project:
+  title:        "TinyMOA: RISC-V CPU with Compute-in-Memory Accelerator"
+  author:       "Ezra Wolf"
+  discord:      "erstfeld" # Optional
+  description:  "RISC-V CPU based on TinyQV with an integrated SRAM-based compute-in-memory (CIM) accelerator for performing efficient analog matrix multiplications."
+  language:     "Verilog" # Valid: Verilog, SystemVerilog, Amaranth, VHDL, etc.
+  clock_hz:     20000000 # Clock Hz (or 0 if N/A)
+
+  # A single tile is ~167x108um
+  # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "8x2"
+
+  # Top module must start with "tt_um_"
+  top_module:  "tt_um_tinymoa_ihp26a"
+
+  # List your project's source files here.
+  # Source files must be in ./src and you must list each source file separately, one per line.
+  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  source_files:
+    - "project.v"
+    - "TinyMOA/src/tinymoa.v"
+    # - "TinyMOA/src/bootloader.v"
+    - "TinyMOA/src/cpu.v"
+    # - "TinyMOA/src/counter.v"
+    # - "TinyMOA/src/decoder.v"
+    # - "TinyMOA/src/registers.v"
+    # - "TinyMOA/src/alu.v"
+    - "TinyMOA/src/dcim/dcim.v"
+    - "TinyMOA/src/dcim/compressor.v"
+    - "TinyMOA/src/tcm.v"
+    # - "TinyMOA/src/qspi.v"
+
+# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+pinout:
+  ui[0]: "ui_in0"
+  ui[1]: "ui_in1"
+  ui[2]: "ui_in2"
+  ui[3]: "ui_in3"
+  ui[4]: "ui_in4"
+  ui[5]: "ui_in5"
+  ui[6]: "ui_in6"
+  ui[7]: "ui_in7"
+
+  uo[0]: "uo_out0"
+  uo[1]: "uo_out1"
+  uo[2]: "uo_out2"
+  uo[3]: "uo_out3"
+  uo[4]: "uo_out4"
+  uo[5]: "uo_out5"
+  uo[6]: "uo_out6"
+  uo[7]: "uo_out7"
+
+  uio[0]: "uio_io0"
+  uio[1]: "uio_io1"
+  uio[2]: "uio_io2"
+  uio[3]: "uio_io3"
+  uio[4]: "uio_io4"
+  uio[5]: "uio_io5"
+  uio[6]: "uio_io6"
+  uio[7]: "uio_io7"
+
+# DO NOT CHANGE
+yaml_version: 6
